@@ -1,0 +1,163 @@
+1)	Supple value to function and return the square table that value
+	Example: - If Supplied value is 5,
+	Output:  Square: 25
+
+	Create the table of 5 and print the square of each number.
+
+CODE::  package Java_programs;
+	import java.util.*;
+	public class Tables	//creates class
+		 {
+		void square(int number)	//creates function and passes parameter
+		{
+			int i,number1;
+			for(i=0;i<=10;i++)
+		{
+			number1=number*i;
+			System.out.println("squares of a value is:" +number1*number1);
+		}
+		}
+		public static void main(String[] args)//creates main function
+	        {
+			Tables tab=new Tables();
+			tab.square(5);
+		}
+		}
+
+
+2)	Find out if the given number is an Armstrong number.
+	Logic: - if 153 is the Supplied value, then  13 + 53 + 33 = 1+125+27 = 153.
+
+CODE::  package Java_programs;
+	class Armstrong	// creates class armstrong
+	{  
+        public static void main(String[] args)	// creates main function
+        {  
+	    int count=0,a,temp;  
+	    int number=153;
+	    temp=number;  
+		    while(number>0)  //while loop to check the condition
+		    {  
+		    	a=number%10;  
+		    	count=count+(a*a*a);  
+		    	number=number/10; 
+		    }  
+	    		 if(temp==count)  
+	    		 System.out.println("armstrong number");   
+	    		 else  
+	        	 System.out.println("Not armstrong number");   
+	}  
+	}   
+
+3)	Find out all the Armstrong numbers falling in the range of 100-999.
+
+CODE::  package Java_programs;
+	public class Armstrong	
+	{  
+        public static void main(String[] args)	
+        {  
+	    int count=0,a,i,temp;  
+	    
+		    for(i=100;i<1000;i++)  
+		    {  
+		    	temp=i;
+		    	while(temp!=0)
+		    	{
+		    	a=temp%10;  
+		    	count=count+(a*a*a);  
+		    	temp=temp/10; 
+		    	}
+		      
+	    		 if(count==i)
+	    		 {
+	  	    		 System.out.println(i);  
+	  	    		 
+	    		 }count=0;
+		    }
+	}  
+	}   
+
+4)	Provide  marks of three subject and declare the result, result declaration is based on  below conditions:
+	Condition 1: -All subjects marks is greater than 60 is Passed 
+	Condition 2: -Any two subjects marks is greater than 60 is Promoted
+	Condition 3: -Any one subject marks is greater than 60 or all subjects’ marks less than 60 is failed.
+
+CODE::  package Java_programs;
+	import java.util.Scanner;
+	public class Subject
+	{
+	
+	
+	public static void main(String[] args)
+	{
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Enter subject1 marks");
+		int subject1=scan.nextInt();
+		System.out.println("Enter subject2 marks");
+		int subject2=scan.nextInt();
+		System.out.println("Enter subject3 marks");
+		int subject3=scan.nextInt();
+		
+		if(subject1>60 && subject2>60 && subject3>60)
+		{
+			System.out.println("passed");
+		}
+		else if((subject1>60 || subject2>60 && subject3>60) && (subject2>60 || subject3>60 && subject1>60)&&(subject3>60 || subject1>60 && subject2>60))
+		{
+			System.out.println("promoted");
+		}
+		else 
+		{
+		System.out.println("Fail");
+		}
+		
+
+	}
+
+	}
+
+5)	Calculate the income tax on the basis of following  table.
+	Note:-Assume slab is consider for Male, Female as well as Senior citizen
+	Slab	Income Range	Tax payable in Percentage
+	Slab A	0-1,80,000	Nil
+	Slab B	1,81,001-3,00,000	10%
+	Slab C	3,00,001-5,00,000	20%
+	Slab D	5,00,001-10,00,000	30%
+	Accept CTC from user and display tax amount 
+
+CODE::  package Java_programs;
+	import java.util.Scanner;
+	public class Income {
+
+	public static void main(String[] args)
+	{
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Enter your amount");
+		int amount=scan.nextInt();
+		if(amount>0 && amount<180000)
+		{
+			System.out.println("Tax is NULL");
+		}
+		else if(amount>180000 && amount<=300000)
+		{
+		int total=(amount*10)/100;
+		System.out.println("tax amount is:"+total);
+		}
+		else if(amount>300000 && amount<=500000)
+		{
+		int total=(amount*20)/100;
+		System.out.println("tax amount is:"+total);
+		}
+		else if(amount>500000 && amount<=1000000)
+		{
+		int total=(amount*30)/100;
+		System.out.println("tax amount is:"+total);
+		}
+			
+		
+
+	}
+
+}
+
+
