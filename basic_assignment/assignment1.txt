@@ -160,4 +160,352 @@ CODE::  package Java_programs;
 
 }
 
+6) Take complete date from the user in the form of (DD,MM,YYYY) and Display the date in the form given below:
+   DD/Month-Name/YYYY
+
+CODE::
+	import java.util.Scanner;
+	public class Month
+	{
+	public static void main(String[] args) 
+	{	
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter date in dd/mm/yyyy");
+        int date=sc.nextInt();
+	int month=sc.nextInt();
+	int year=sc.nextInt();
+	System.out.println(+date+"/"+month+"/"+year);
+	if(month==1)
+	{
+		System.out.println(+date+"/"+"january"+"/"+year);
+	}
+	if(month==2)
+	{
+		System.out.println(+date+"/"+"february"+"/"+year);
+	}
+	if(month==3)
+	{
+		System.out.println(+date+"/"+"march"+"/"+year);
+	}
+	if(month==4)
+	{
+		System.out.println(+date+"/"+"April"+"/"+year);
+	}
+	if(month==5)
+	{
+		System.out.println(+date+"/"+"may"+"/"+year);
+	}
+	if(month==6)
+	{
+		System.out.println(+date+"/"+"june"+"/"+year);
+	}
+	if(month==7)
+	{
+		System.out.println(+date+"/"+"july"+"/"+year);
+	}
+	if(month==8)
+	{
+		System.out.println(+date+"/"+"August"+"/"+year);
+	}
+	if(month==9)
+	{
+		System.out.println(+date+"/"+"september"+"/"+year);
+	}
+	if(month==10)
+	{
+		System.out.println(+date+"/"+"october"+"/"+year);
+	}
+	if(month==11)
+	{
+		System.out.println(+date+"/"+"November"+"/"+year);
+	}
+	if(month==12)
+	{
+		System.out.println(+date+"/"+"December"+"/"+year);
+	}
+	}
+
+}
+
+7)Consider a CUI based application, where you are asking a user to enter his Login name and password, after entering the valid user-id and password it will print the message
+“Welcome” along with user name. As per the validation is concerned, the program should keep a track of login attempts. After three attempts a message should be flashed 
+saying “Contact Admin” and the program should terminate. 
+
+CODE::
+import java.util.*;
+import java.util.Scanner;
+public class Application
+{
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		String userid="harish";
+		String password="harish";
+		int counter=0;
+		for(int count=1;count<4;count++)
+		{ 
+			System.out.println("Enter your user_id:");
+			String userid1=sc.nextLine();
+			System.out.println("Enter your password:");
+			String password1=sc.nextLine();
+			if(userid.equals(userid1) && password.equals(password1))
+			{
+				System.out.println("Welcome "+userid);
+				break;
+			}
+			else
+			{
+				counter++;
+			}
+		}
+		if(counter==3)
+		{
+			System.out.println("contact admin");
+		}
+		
+	}
+}
+
+8)There is an Array which is of the size 15, which may or may not be sorted. You should write a program to accept a number and search if it in contained in the array   (linear search)
+
+CODE::
+import java.util.*;
+
+class LinearSearch
+
+{
+
+	public static void main(String[] args)
+
+	{
+
+		Scanner sc = new Scanner(System.in);
+
+		int array[] = {5,10,15,20,25,30,35,34,40,36,50,6,7,96,76};
+
+		System.out.println("Enter the number you want to search :");
+
+		int number = sc.nextInt();
+
+		for(int count=0;count<array.length;count++)
+
+		{
+
+			if(array[count]==number)
+
+			{
+				System.out.println("Entered number is in the array:"+number);
+
+			}
+
+		}
+
+	}
+
+}
+
+9)	Using the above table apply sorting using Sequential Sort.
+
+CODE::class Sort
+
+{
+
+	public static void main(String[] args) throws Exception
+
+	{
+
+		int array[] = {10,54,14,45,12,5,68,6,55,7,35,45,77,87,76};
+
+		int temporary;
+
+		for(int point=0;point<15;point++)
+
+		{
+
+			for(int pointer1=point+1;pointer1<15;pointer1++)
+
+			{
+
+				if(array[point]>array[pointer1])
+
+				{
+
+				temporary=array[point];
+
+				array[point]=array[pointer1];
+
+				array[pointer1]=temporary;
+
+				}
+
+			}
+
+		}
+
+		for(int point=0;point<15;point++)
+
+		{
+
+		System.out.print(array[point]+" ");
+
+		}
+
+	}
+
+}
+
+10)	From given array of integers, create new array having duplicates removed and every element appearing once only from the given array.
+
+CODE::
+import java.util.*;
+import java.util.Scanner;
+class Duplicates
+
+{
+
+	public static void main(String[] args)
+
+	{
+
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("enter the number of elements:");
+
+		int numberOfElements=sc.nextInt();
+
+		int array[]=new int[numberOfElements];
+
+		System.out.println("Enter the elements");
+
+		for(int index=0;index<array.length;index++)
+
+		{
+
+			array[index]=sc.nextInt();
+
+		}
+
+		for(int index=0;index<array.length;index++)//sorting
+
+		{
+
+			int temporaryVariable;
+
+			for(int index1=index+1;index1<array.length;index1++)
+
+			{
+
+				if(array[index]>array[index1])
+
+				{
+
+					temporaryVariable=array[index];
+
+					array[index]=array[index1];
+
+					array[index1]=temporaryVariable;
+
+				}
+
+			}
+
+		}
+
+		int temporaryVariable=0;
+
+		for(int index=0;index<array.length-1;index++)
+
+		{
+
+			if(array[index]!=array[index+1])
+
+			{
+
+				array[temporaryVariable]=array[index];	
+
+				temporaryVariable++;
+
+			}
+
+		}
+
+		array[temporaryVariable]=array[array.length-1];
+
+		int newArray[]=new int[temporaryVariable+1];
+
+		System.out.println("After removing dupalicate elements");
+
+		for(int index=0;index<newArray.length;index++)
+
+		{
+
+			System.out.println(array[index]);
+
+		}
+
+	}
+}
+
+11)	Accept the marks of three students for the subject say A, B, C. Find the total scored and the average in all the subjects. Also Find the Total and Average scored by students 
+
+CODE::
+import java.util.Scanner;
+
+public class AverageValue 
+
+
+
+{
+
+	public static void main(String args[])
+
+
+
+	{
+
+		int studentDetails[][]=new int[3][3];
+
+		int total=0;
+
+		Scanner sc=new Scanner(System.in);
+
+		for(int rows=0;rows<3;rows++)
+
+		{
+
+			System.out.println("enter student  "+(rows+1)+"  marks in A,B and C subjects:");
+
+			for(int columns=0;columns<3;columns++)
+
+			{
+
+				studentDetails[rows][columns]=sc.nextInt();
+
+			}
+
+		}
+
+		for(int rows=0;rows<3;rows++)
+
+		{
+
+			total=0;
+
+			for(int columns=0;columns<3;columns++)
+
+			{
+
+				total += studentDetails[rows][columns];
+
+			}
+
+			System.out.println("total score of student "+(rows+1)+" :"+total);
+
+			System.out.println("Average score is:"+(total/3));
+
+		}
+
+	}
+
+}
 

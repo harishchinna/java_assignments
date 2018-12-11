@@ -1,0 +1,187 @@
+Checking the test cases for the calculator program.
+
+Main Code::package Java_programs;
+
+	import java.util.Scanner;
+	public class Calculator 
+	{
+
+	public double addition(double one,double two)
+	{
+		double result;
+		result=one+two;
+		return result;
+	}
+	public  double subtraction(double one,double two)
+	{
+		double result;
+		result=one-two;
+		return result;
+	}
+	public  double multiplication(double one,double two)
+	{
+		double result;
+		result=one*two;
+		return result;
+	}
+	public double division(double one,double two)
+	{
+		double result;
+		result=one/two;
+		return result;
+	}
+	
+	}
+
+Testcase code for Addition::
+	import org.junit.Before;
+	import org.junit.Test;
+	import Java_programs.Calculator;
+	import static org.junit.Assert.*;
+
+	public class CalculatorTests {
+	private Calculator check;
+	@Before
+	public void setUp()
+	{
+		check=new Calculator();
+	}
+	@Test
+	public void  additionTestCases()
+	{
+		
+		assertEquals("checking the value",50,check.addition(20,30),0);
+		
+	}
+	@Test
+	public void  additionTestCasesGivingNegativeValues()
+	{
+		
+		assertEquals("checking the value",-50,check.addition(-20,-30),0);
+		
+	}
+	@Test
+	public void  additionTestCasesGivingOneNegativeValues()
+	{
+		
+		assertEquals("checking the value",10,check.addition(-20,30),0);
+		
+	}
+	@Test
+	public void  additionTestCasesGivingZeroValues()
+	{
+		Calculator check=new Calculator();
+		assertEquals("checking the value",0,check.addition(0,0),0);
+		
+	}
+	}
+
+Testcase code for Subtraction::
+	import static org.junit.Assert.*;
+	import org.junit.Before;
+	import org.junit.Test;
+	import Java_programs.Calculator;
+
+	public class Subtration {
+	private Calculator check;
+	@Before
+	public void setUp()
+	{
+		check=new Calculator();
+	}
+	@Test
+	public void subtractionTestCase()
+	{
+		
+		assertEquals("checking with different values",100,check.subtraction(200,100),0);
+	}
+	@Test
+	public void subtractionTestCaseGivingTwoNegativeValues()
+	{
+		
+		assertEquals("checking with different values",-100,check.subtraction(-200,-100),0);
+	}
+	@Test
+	public void subtractionTestCaseGivingOnePositiveNumber()
+	{
+		
+		assertEquals("checking with different values",300,check.subtraction(200,-100),0);
+	}
+	}
+
+
+Testcase code for Multiplication::
+import static org.junit.Assert.assertEquals;
+
+	import org.junit.Before;
+	import org.junit.Test;
+	import Java_programs.Calculator;
+
+	public class MultiplicationTests {
+	private Calculator check;
+	@Before
+	public void setUp()
+	{
+		check=new Calculator();
+	}
+	@Test
+	public void MultiplicationTestCases()
+	{
+		assertEquals("checking the value",50,check.multiplication(5,10),0);	
+	}
+	@Test
+	public void MultiplicationTestCasesPassingNegativeValues()
+	{
+		assertEquals("checking the value",50,check.multiplication(-5,-10),0);	
+	}
+	@Test
+	public void MultiplicationTestCasesPassingOneNegativeValue()
+	{
+		assertEquals("checking the value",-50,check.multiplication(-5,10),0);	
+	}
+	@Test
+	public void MultiplicationTestCasesPassingZeros()
+	{
+		assertEquals("checking the value",0,check.multiplication(0,0),0);	
+	}
+
+	}
+
+
+Testcase code for Division::
+import static org.junit.Assert.assertEquals;
+import org.junit.Before;
+import org.junit.Test;
+import Java_programs.Calculator;
+
+
+public class DivisionTests {
+	private Calculator check;
+	@Before
+	public void setUp()
+	{
+		check=new Calculator();
+	}
+	@Test
+	public void DivisionTestCases()
+	{
+		assertEquals("checking the value",5,check.division(25,5),0);
+	}
+	@Test
+	public void DivisionTestCasesPassingNegativeValue()
+	{
+		assertEquals("checking the value",-5,check.division(25,-5),0);
+	}
+	@Test
+	public void DivisionTestCasesPassingTwoNegativeValues()
+	{
+		assertEquals("checking the value",5,check.division(-25,-5),0);
+	}
+	@Test
+	public void DivisionTestCasesPassingZeroValue()
+	{
+		assertEquals("checking the value",0,check.division(0,5),0);
+	}
+
+}
+
