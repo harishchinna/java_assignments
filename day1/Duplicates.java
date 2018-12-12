@@ -67,9 +67,9 @@ class Duplicates
 				temporaryVariable++;
 
 			}
-
-		}
-
+				
+				
+ 		}
 		array[temporaryVariable]=array[array.length-1];
 
 		int newArray[]=new int[temporaryVariable+1];
